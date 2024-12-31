@@ -1,34 +1,42 @@
 import time
 
-def get_epoch_time():
+def epoch_time():
     epoch_time = 0
 
-    gtm = time.gmtime(epoch_time)
+    gmt = time.gmtime(epoch_time)
 
-    formated_epoch_time = time.strftime("%B %e, %Y", gtm)
-    formated_epoch_time = formated_epoch_time.replace("  ", " ")
+    formated_epoch_date = time.strftime("%B %e, %Y", gmt)
+    formated_epoch_date = formated_epoch_date.replace("  ", " ")
 
-    return (formated_epoch_time)
+    return (formated_epoch_date)
 
-def get_current_secs_time():
-    current_secs_time = time.time()
+def current_secs_time(cur_secs_time):    
+    str_cur_secs_time = str(cur_secs_time)
+    cut_time = str_cur_secs_time[:15]
 
-    int_cur_time = int(current_secs_time)
-    dec_cur_time = current_secs_time - int_cur_time
+    int_part, dec_part = cut_time.split(".")
+    int_part = f"{int(int_part):,}"
 
-    int_cur_time = f"{int_cur_time}:,"
+    formated_time = int_part + "." + dec_part
 
-    dec_cur_time = round(dec_cur_time, 4)
-    print(current_secs_time)
-    print(dec_cur_time)
-    dec_cur_time = str(dec_cur_time)
-    dec_cur_time = dec_cur_time.replace("0.", "")
+    return(formated_time)
 
-    formated_cur_secs_time = int_cur_time + dec_cur_time
+def scientific_notation(cur_time):
+    new_notation = f"{cur_time:.2e}"
 
-    return(formated_cur_secs_time)
+    return(new_notation)
 
-print("Seconds since", get_epoch_time(), ":", get_current_secs_time())
+def current_date(cur_secs_time):
+    gmt = time.gmtime(cur_secs_time)
+    formated_cur_date = time.strftime("%b %e %Y")
+    formated_cur_date = formated_cur_date.replace("  ", " ")
 
-#print("cur = ", current_secs_time)
-#print("new = ", formated_time)
+    return(formated_cur_date)
+
+def main():
+    cur_secs_time = time.time()
+    print("Seconds since", epoch_time() + ":", current_secs_time(cur_secs_time), "or", scientific_notation(cur_secs_time), "in scientific notation")
+    print(current_date(cur_secs_time))
+
+if __name__ == "__main__":
+    main()
