@@ -8,7 +8,7 @@ def all_thing_is_obj(object: any) -> int:
             return (42)
 
     if (type(object) is str):
-        if ((object == "Brian") | (object == "Toto")):
+        if ((object == "Brian") or (object == "Toto")):
             print(object, "is in the kitchen :", type(object))
     else:
         print("Type not found")

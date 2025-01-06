@@ -9,10 +9,10 @@ try:
     assert len(sys.argv[1]) != 0, \
         "AssertError: no valid input provided, argument is empty"
 
-    user_imput = sys.argv[1]
-    if user_imput[0] == '-' or user_imput[0] == '+':
-        user_imput = user_imput[1:]
-    if not user_imput.isdigit():
+    user_input = sys.argv[1]
+    if user_input[0] == '-' or user_input[0] == '+':
+        user_input = user_input[1:]
+    if not user_input.isdigit():
         raise AssertionError(
             "AssertionError: argument is not an integer")
 
