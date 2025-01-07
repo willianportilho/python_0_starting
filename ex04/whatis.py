@@ -10,7 +10,7 @@ try:
         "AssertError: no valid input provided, argument is empty"
 
     user_input = sys.argv[1]
-    if user_input[0] == '-' or user_input[0] == '+':
+    if (user_input[0] == '-') or (user_input[0] == '+'):
         user_input = user_input[1:]
     if not user_input.isdigit():
         raise AssertionError(
