@@ -2,20 +2,19 @@ import sys
 
 
 def count_chars(text: str):
-    """
-    Counts the number of characters of each type in the given text.
+    """Counts the number of characters of each type in the given text.
 
-    Parameters:
-        text (str): the input text to be analyzed.
+Parameters:
+    text (str): the input text to be analyzed.
 
-    Returns:
-        tuple: A tuple containing:
-            - text_len (int): Total number of characters in the text.
-            - upper (int): Number of uppercase letters.
-            - lower (int): Number of lowercase letters.
-            - punctuation (int): Number of punctuation marks characters.
-            - spaces (int): Number of spaces.
-            - digits (int): Number of numeric digits.
+Returns:
+    tuple: A tuple containing:
+        - text_len (int): Total number of characters in the text.
+        - upper (int): Number of uppercase letters.
+        - lower (int): Number of lowercase letters.
+        - punctuation (int): Number of punctuation marks characters.
+        - spaces (int): Number of spaces.
+        - digits (int): Number of numeric digits.
     """
 
     punctuation_chars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
@@ -44,20 +43,19 @@ def count_chars(text: str):
 
 
 def print_values(values):
-    """
-    Prints the analysis results of the character counts in a formatted way.
+    """Prints the analysis results of the character counts in a formatted way.
 
-    Parameters:
-        values (dict): A dictionary containing the following keys:
-            - 'text_len' (int): Total number of characters in the text.
-            - 'upper' (int): Number of uppercase letters.
-            - 'lower' (int): Number of lowercase letters.
-            - 'punctuation' (int): Number of punctuation marks characters.
-            - 'spaces' (int): Number of spaces.
-            - 'digits' (int): Number of numeric digits.
+Parameters:
+    values (dict): A dictionary containing the following keys:
+        - 'text_len' (int): Total number of characters in the text.
+        - 'upper' (int): Number of uppercase letters.
+        - 'lower' (int): Number of lowercase letters.
+        - 'punctuation' (int): Number of punctuation marks characters.
+        - 'spaces' (int): Number of spaces.
+        - 'digits' (int): Number of numeric digits.
 
-    Returns:
-        None
+Returns:
+    None
     """
 
     print("The text contains", values['text_len'], "characters:")
@@ -69,21 +67,20 @@ def print_values(values):
 
 
 def handle_text(text: str):
-    """
-    Processes the input text by replacing specific unwanted characters
-    and calculating the character counts.
+    """Processes the input text by replacing specific unwanted characters \
+and calculating the character counts.
 
-    Parameters:
-        text (str): The input text to be processed.
+Parameters:
+    text (str): The input text to be processed.
 
-    Returns:
-        dict: A dictionary containing the following keys:
-            - 'text_len' (int): Total number of characters in the text.
-            - 'upper' (int): Number of uppercase letters.
-            - 'lower' (int): Number of lowercase letters.
-            - 'punctuation' (int): Number of punctuation marks characters.
-            - 'spaces' (int): Number of spaces.
-            - 'digits' (int): Number of numeric digits.
+Returns:
+    dict: A dictionary containing the following keys:
+        - 'text_len' (int): Total number of characters in the text.
+        - 'upper' (int): Number of uppercase letters.
+        - 'lower' (int): Number of lowercase letters.
+        - 'punctuation' (int): Number of punctuation marks characters.
+        - 'spaces' (int): Number of spaces.
+        - 'digits' (int): Number of numeric digits.
     """
 
     text = text.replace("\r", " ")
@@ -92,16 +89,15 @@ def handle_text(text: str):
 
 
 def user_input():
-    """
-    Continuously prompts the user for text input
-    until a non-empty string is provided.
+    """Continuously prompts the user for text input \
+until a non-empty string is provided.
 
-    The function reads input line-by-line
-    using `sys.stdin.readline` and removes
-    a single trailing newline character if present.
+The function reads input line-by-line \
+using `sys.stdin.readline` and removes \
+a single trailing newline character if present.
 
-    Returns:
-        str: The valid input string provided by the user.
+Returns:
+    str: The valid input string provided by the user.
     """
 
     while True:
@@ -115,19 +111,18 @@ def user_input():
 
 
 def main():
-    """
-    The main entry point of the program.
+    """The main entry point of the program.
 
-    Handles command-line arguments and input text processing:
-        - If no arguments are provided or the first argument is empty,
-        prompts the user for input.
-        - If an argument is provided, uses it as the input text.
-        - Validates the number of arguments and raises an AssertionError
-        if more than one argument is given.
-        - Handles KeyboardInterrupt to terminate the program.
+Handles command-line arguments and input text processing:
+    - If no arguments are provided or the first argument is empty, \
+prompts the user for input.
+    - If an argument is provided, uses it as the input text.
+    - Validates the number of arguments and raises an AssertionError \
+if more than one argument is given.
+    - Handles KeyboardInterrupt to terminate the program.
 
-    Returns:
-        None
+Returns:
+    None
     """
 
     try:
