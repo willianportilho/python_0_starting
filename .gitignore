@@ -35,3 +35,6 @@ Thumbs.db
 # System configuration files
 *.bak
 *.orig
+
+#python
+*python*
