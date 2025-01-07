@@ -22,18 +22,19 @@ def main():
         ]
 
         for idx, (func, it) in enumerate(test_cases, start=1):
-            filter_result = filter(func, it)
             ft_filter_result = ft_filter(func, it)
+            filter_result = filter(func, it)
 
             print(f"test case {idx}: function={func} | iterable={it}")
             print(f"ft_filter result: {list(ft_filter_result)}")
             print(f"   filter result: {list(filter_result)}\n")
 
             if idx == 4:
-                print(f"test case 5: checks if iterator is empty")
-                print(f"ft_filter result: {list(ft_filter_result)} | len: {len(list(ft_filter_result))}")
-                print(f"   filter result: {list(filter_result)} | len: {len(list(filter_result))}\n")
-
+                print("test case 5: checks if iterator is empty")
+                print(f"ft_filter result: {list(ft_filter_result)}", end="")
+                print(f" | len: {len(list(ft_filter_result))}")
+                print(f"   filter result: {list(filter_result)}", end="")
+                print(f" | len: {len(list(filter_result))}\n")
 
     except Exception as e:
         print(f"Exception: an error occurred: {e}")
