@@ -144,6 +144,8 @@ def main():
         print(e)
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt: (ctrl + c) was pressed")
+    except Exception as e:
+        print(f"Exception: an error occurred: {e}")
     else:
         print_values(handle_text(text))
 
