@@ -17,7 +17,7 @@ Raises:
     AssertionError: If any of the validation checks fail.
     """
 
-    if len(sys.argv) != 3:
+    if (not args[0]) or (not args[1]):
         raise AssertionError(
             "AssertionError: the arguments are bad")
 
@@ -75,6 +75,10 @@ Returns:
     None
     """
     try:
+        if len(sys.argv) != 3:
+            raise AssertionError(
+                "AssertionError: the arguments are bad")
+
         check_arguments(sys.argv[1:])
     except AssertionError as e:
         print(e)
